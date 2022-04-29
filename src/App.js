@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import EndGame from "./EndGame";
+import GamePanel from "./GamePanel";
+import NamesOfPlayers from "./NamesOfPlayers";
+import "./App.css"
 
-function App() {
+const App = () => {
+  const [statusGame, setStatusGame] = useState("");
+  const [count, setCount] = useState(1);
+  const onChangeCount = () => {
+    setCount(count => count + 1);
+  }
+  const onChangeStatus = (newStatus) => {
+    setStatusGame(newStatus);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <NamesOfPlayers />
+      <h2 className="container__turn">{count % 2 !== 0 ? "X" : "O"} turn</h2>
+      <GamePanel onChangeStatus={onChangeStatus} onChangeCount={onChangeCount} count={count} />
+      {statusGame && <EndGame status={statusGame} />}
     </div>
-  );
+  )
 }
 
 export default App;

@@ -1,0 +1,46 @@
+.gamePanel {
+    height: calc(100vh - 62px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gamePanel-panelButtons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.gamePanel-panelButtons button {
+    width: 100px;
+    height: 100px;
+    margin: 0;
+    font-size: 70px;
+    cursor: pointer;
+    background-color: #fff;
+    border: none;
+    border: 1px solid black;
+}
+
+.gamePanel-panelButtons button:first-child,
+.gamePanel-panelButtons button:nth-child(2),
+.gamePanel-panelButtons button:nth-child(3) {
+    border-top: none;
+}
+
+.gamePanel-panelButtons button:last-child,
+.gamePanel-panelButtons button:nth-child(7),
+.gamePanel-panelButtons button:nth-child(8) {
+    border-bottom: none;
+}
+
+.gamePanel-panelButtons button:nth-child(3n+1) {
+    border-left: none;
+}
+
+.gamePanel-panelButtons button:nth-child(3n+3) {
+    border-right: none;
+}
+
+.gamePanel-panelButtons button .gamePanel-panelButtons button.disable {
+    pointer-events: none;
+}
