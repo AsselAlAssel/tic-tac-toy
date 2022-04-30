@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import checkStatusForTheGame from "./checkStatusForTheGame";
+import checkIfHasWinner from "./checkIfHasWinner";
 import GameButton from "./GameButton";
 import "./GamePanel.css"
 
@@ -22,7 +22,7 @@ const GamePanel = (props) => {
 
     useEffect(() => {
         if (props.count > 5) {
-            const status = checkStatusForTheGame(gameSequence, props.count);
+            const status = checkIfHasWinner(gameSequence, props.count);
             props.onChangeStatus(status);
         }
     })

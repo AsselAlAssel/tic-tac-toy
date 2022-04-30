@@ -1,4 +1,4 @@
-const hasAWinner = (gameSequence, a, b, c) => {
+const hasEqual = (gameSequence, a, b, c) => {
     if (gameSequence[a] === "" || gameSequence[b] === "" || gameSequence[c] === "") {
         return false;
     }
@@ -8,11 +8,11 @@ const hasAWinner = (gameSequence, a, b, c) => {
 }
 
 
-const checkStatusForTheGame = (gameSequence, count) => {
+const checkIfHasWinner = (gameSequence, count) => {
     //for check row
     for (let index = 0; index < 3; index++) {
         let start = index * 3;
-        if (hasAWinner(gameSequence, start, start + 1, start + 2)) {
+        if (hasEqual(gameSequence, start, start + 1, start + 2)) {
             return `${gameSequence[start]} win`;
         }
 
@@ -21,14 +21,14 @@ const checkStatusForTheGame = (gameSequence, count) => {
     // for check column
 
     for (let index = 0; index < 3; index++) {
-        if (hasAWinner(gameSequence, index, index + 3, index + 6)) {
+        if (hasEqual(gameSequence, index, index + 3, index + 6)) {
             return `${gameSequence[index]} win`;
         }
 
     }
-    if (hasAWinner(gameSequence, 0, 4, 8)) {
+    if (hasEqual(gameSequence, 0, 4, 8)) {
         return `${gameSequence[0]} win`;
-    } if (hasAWinner(gameSequence, 2, 4, 6)) {
+    } if (hasEqual(gameSequence, 2, 4, 6)) {
         return `${gameSequence[2]} win`;
     }
     if (count < 10) {
@@ -39,4 +39,4 @@ const checkStatusForTheGame = (gameSequence, count) => {
 
 }
 
-export default checkStatusForTheGame;
+export default checkIfHasWinner
