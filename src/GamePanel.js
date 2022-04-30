@@ -29,7 +29,7 @@ const GamePanel = (props) => {
 
     return (
         <div className="gamePanel">
-            <div className="gamePanel-panelButtons">
+            <div className="gamePanel__panelButtons">
                 {gameButtons}
             </div>
         </div>

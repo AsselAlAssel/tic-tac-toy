@@ -5,12 +5,12 @@
     align-items: center;
 }
 
-.gamePanel-panelButtons {
+.gamePanel__panelButtons {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-.gamePanel-panelButtons button {
+.gamePanel__panelButtons button {
     width: 100px;
     height: 100px;
     margin: 0;
@@ -21,26 +21,26 @@
     border: 1px solid black;
 }
 
-.gamePanel-panelButtons button:first-child,
-.gamePanel-panelButtons button:nth-child(2),
-.gamePanel-panelButtons button:nth-child(3) {
+.gamePanel__panelButtons button:first-child,
+.gamePanel__panelButtons button:nth-child(2),
+.gamePanel__panelButtons button:nth-child(3) {
     border-top: none;
 }
 
-.gamePanel-panelButtons button:last-child,
-.gamePanel-panelButtons button:nth-child(7),
-.gamePanel-panelButtons button:nth-child(8) {
+.gamePanel__panelButtons button:last-child,
+.gamePanel__panelButtons button:nth-child(7),
+.gamePanel__panelButtons button:nth-child(8) {
     border-bottom: none;
 }
 
-.gamePanel-panelButtons button:nth-child(3n+1) {
+.gamePanel__panelButtons button:nth-child(3n+1) {
     border-left: none;
 }
 
-.gamePanel-panelButtons button:nth-child(3n+3) {
+.gamePanel__panelButtons button:nth-child(3n+3) {
     border-right: none;
 }
 
-.gamePanel-panelButtons button .gamePanel-panelButtons button.disable {
+.gamePanel__panelButtons button.disable {
     pointer-events: none;
 }
